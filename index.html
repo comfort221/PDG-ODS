@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #005670, #4CAF50, #ffffff);
+      background: linear-gradient(to bottom right, #005670, #f15a24);
       color: white;
       min-height: 100vh;
       margin: 0;
@@ -41,12 +41,7 @@
       display: block;
     }
 
-    h1 {
-      font-weight: bold;
-      color: #005670;
-    }
-
-    h4 {
+    h1, h4 {
       text-align: center;
       margin: 0.2rem 0;
     }
@@ -71,37 +66,25 @@
       text-align: center;
     }
 
+    .carousel {
+      max-width: 95vw;
+      margin: 1.5rem auto 2rem;
+    }
+
     .carousel-inner {
       border-radius: 16px;
       overflow: hidden;
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 75vh;
     }
 
-    .carousel-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-    }
-
-    .carousel-image-container {
+    .carousel-inner img {
       width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
+      height: 75vh;
+      object-fit: cover;
     }
 
-    .carousel-image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      cursor: pointer;
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1);
     }
 
     .social-icons {
@@ -125,51 +108,50 @@
         width: 150px;
         height: 150px;
       }
-
       .description {
         max-width: 600px;
       }
-
       .logo {
         width: 130px;
         padding: 8px 12px;
+      }
+      .carousel-inner img {
+        height: 480px;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Logo -->
   <img src="logo ods.png.png" alt="Logo ODS" class="logo" />
-  <img src="avatar.jpg" alt="Avatar Aziz Diallo" class="avatar" />
-  <h1>Aziz DIALLO</h1>
+
+  <!-- Avatar -->
+  <img src="avatar.jpeg.jpg" alt="Avatar Aziz Diallo" class="avatar" />
+
+  <!-- Nom et Poste -->
+  <h1>AZIZ Diallo</h1>
   <h4>Président Directeur Général <br> ODS</h4>
+
+  <!-- Description -->
   <p class="description">
-    Président Directeur Général de OURY DIALLO SARL, un des plus grands importateurs de denrées alimentaires au Sénégal et dans la sous-région.
+    Président Directeur Général de ODS, un des plus grands importateurs de denrées alimentaires au Sénégal et dans la sous-région.
     Produits : viande, riz, huile, lait, frites, etc.
   </p>
+
+  <!-- Bouton Ajouter Contact -->
   <a href="aziz_diallo.vcf" class="btn-contact" download>📇 Ajouter le contact</a>
 
-  <!-- Carrousel -->
-  <div id="productCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="8000">
-    <div class="carousel-inner" id="carousel-inner">
+  <!-- Carousel Produits -->
+  <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="carousel-image-container">
-          <img src="p1.png" alt="Produit 1" onclick="loadMoreImages()" />
-        </div>
+        <img src="b2.png" alt="Produit 1" />
       </div>
       <div class="carousel-item">
-        <div class="carousel-image-container">
-          <img src="p2.png" alt="Produit 2" onclick="loadMoreImages()" />
-        </div>
+        <img src="b3.png" alt="Produit 2" />
       </div>
       <div class="carousel-item">
-        <div class="carousel-image-container">
-          <img src="p31.png" alt="Produit 3" onclick="loadMoreImages()" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-image-container">
-          <img src="p4.png" alt="Produit 4" onclick="loadMoreImages()" />
-        </div>
+        <img src="b4.png" alt="Produit 3" />
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
@@ -182,38 +164,13 @@
     </button>
   </div>
 
-  <!-- Script pour charger d'autres images -->
-  <script>
-    function loadMoreImages() {
-      const carouselInner = document.getElementById("carousel-inner");
-      carouselInner.innerHTML = `
-        <div class="carousel-item active">
-          <div class="carousel-image-container">
-            <img src="new1.jpg" alt="Nouveau Produit 1" onclick="loadMoreImages()" />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-image-container">
-            <img src="new2.jpg" alt="Nouveau Produit 2" onclick="loadMoreImages()" />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-image-container">
-            <img src="new3.jpg" alt="Nouveau Produit 3" onclick="loadMoreImages()" />
-          </div>
-        </div>
-      `;
-    }
-  </script>
-
-  <div class="text-center my-4">
+ <div class="text-center my-4">
     <p style="font-size: 1.1rem;">🔗 Visitez le site officiel :</p>
     <a href="https://www.ourydiallo.com/" target="_blank">
       <img src="site-image2.jpg" alt="Site officiel ODS" style="max-width: 300px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     </a>
   </div>
-
-  <div class="social-icons">
+    <div class="social-icons">
     <a href="https://www.linkedin.com/in/aziz-diallo-87165110b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     <a href="https://wa.me/221777126218" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
   </div>
