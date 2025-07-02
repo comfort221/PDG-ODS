@@ -125,11 +125,9 @@
         width: 150px;
         height: 150px;
       }
-
       .description {
         max-width: 600px;
       }
-
       .logo {
         width: 130px;
         padding: 8px 12px;
@@ -138,6 +136,7 @@
   </style>
 </head>
 <body>
+
   <img src="logo ods.png.png" alt="Logo ODS" class="logo" />
   <img src="avatar.jpg" alt="Avatar Aziz Diallo" class="avatar" />
   <h1>Aziz DIALLO</h1>
@@ -146,32 +145,35 @@
     Président Directeur Général de OURY DIALLO SARL, un des plus grands importateurs de denrées alimentaires au Sénégal et dans la sous-région.
     Produits : viande, riz, huile, lait, frites, etc.
   </p>
+
   <a href="aziz_diallo.vcf" class="btn-contact" download>📇 Ajouter le contact</a>
 
-  <!-- Carrousel -->
-  <div id="productCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="8000">
-    <div class="carousel-inner" id="carousel-inner">
+  <!-- CAROUSEL -->
+  <div id="productCarousel" class="carousel slide my-4" data-bs-ride="false">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="carousel-image-container">
-          <img src="p1.png" alt="Produit 1" onclick="loadMoreImages()" />
+          <img src="p1.png" alt="Produit 1" onclick="window.open(this.src, '_blank')" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p2.png" alt="Produit 2" onclick="loadMoreImages()" />
+          <img src="p2.png" alt="Produit 2" onclick="window.open(this.src, '_blank')" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p31.png" alt="Produit 3" onclick="loadMoreImages()" />
+          <img src="p31.png" alt="Produit 3" onclick="window.open(this.src, '_blank')" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p4.png" alt="Produit 4" onclick="loadMoreImages()" />
+          <img src="p4.png" alt="Produit 4" onclick="window.open(this.src, '_blank')" />
         </div>
       </div>
     </div>
+
+    <!-- Contrôles -->
     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Précédent</span>
@@ -182,30 +184,7 @@
     </button>
   </div>
 
-  <!-- Script pour charger d'autres images -->
-  <script>
-    function loadMoreImages() {
-      const carouselInner = document.getElementById("carousel-inner");
-      carouselInner.innerHTML = `
-        <div class="carousel-item active">
-          <div class="carousel-image-container">
-            <img src="b2.jpg" alt="Nouveau Produit 1" onclick="loadMoreImages()" />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-image-container">
-            <img src="b3.jpg" alt="Nouveau Produit 2" onclick="loadMoreImages()" />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-image-container">
-            <img src="b4.jpg" alt="Nouveau Produit 3" onclick="loadMoreImages()" />
-          </div>
-        </div>
-      `;
-    }
-  </script>
-
+  <!-- LIEN SITE -->
   <div class="text-center my-4">
     <p style="font-size: 1.1rem;">🔗 Visitez le site officiel :</p>
     <a href="https://www.ourydiallo.com/" target="_blank">
@@ -213,11 +192,14 @@
     </a>
   </div>
 
+  <!-- Réseaux sociaux -->
   <div class="social-icons">
-    <a href="https://www.linkedin.com/in/aziz-diallo-87165110b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a href="https://www.linkedin.com/in/aziz-diallo-87165110b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     <a href="https://wa.me/221777126218" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
   </div>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
