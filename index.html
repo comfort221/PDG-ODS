@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -71,32 +70,39 @@
       padding: 0.5rem 1rem;
       text-align: center;
     }
+
     .carousel-inner {
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
-}
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 75vh;
+    }
 
-.carousel-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}
+    .carousel-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+    }
 
-.carousel-image-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-}
+    .carousel-image-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+    }
 
+    .carousel-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+    }
 
     .social-icons {
       text-align: center;
@@ -119,9 +125,11 @@
         width: 150px;
         height: 150px;
       }
+
       .description {
         max-width: 600px;
       }
+
       .logo {
         width: 130px;
         padding: 8px 12px;
@@ -139,26 +147,28 @@
     Produits : viande, riz, huile, lait, frites, etc.
   </p>
   <a href="aziz_diallo.vcf" class="btn-contact" download>📇 Ajouter le contact</a>
-  <div id="productCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
+
+  <!-- Carrousel -->
+  <div id="productCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="8000">
+    <div class="carousel-inner" id="carousel-inner">
       <div class="carousel-item active">
         <div class="carousel-image-container">
-          <img src="p1.png" alt="Produit 1" />
+          <img src="p1.png" alt="Produit 1" onclick="loadMoreImages()" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p2.png" alt="Produit 2" />
+          <img src="p2.png" alt="Produit 2" onclick="loadMoreImages()" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p31.png" alt="Produit 3" />
+          <img src="p31.png" alt="Produit 3" onclick="loadMoreImages()" />
         </div>
       </div>
       <div class="carousel-item">
         <div class="carousel-image-container">
-          <img src="p4.png" alt="Produit 4" />
+          <img src="p4.png" alt="Produit 4" onclick="loadMoreImages()" />
         </div>
       </div>
     </div>
@@ -171,16 +181,43 @@
       <span class="visually-hidden">Suivant</span>
     </button>
   </div>
+
+  <!-- Script pour charger d'autres images -->
+  <script>
+    function loadMoreImages() {
+      const carouselInner = document.getElementById("carousel-inner");
+      carouselInner.innerHTML = `
+        <div class="carousel-item active">
+          <div class="carousel-image-container">
+            <img src="b2.jpg" alt="Nouveau Produit 1" onclick="loadMoreImages()" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-image-container">
+            <img src="b3.jpg" alt="Nouveau Produit 2" onclick="loadMoreImages()" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-image-container">
+            <img src="b4.jpg" alt="Nouveau Produit 3" onclick="loadMoreImages()" />
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
   <div class="text-center my-4">
     <p style="font-size: 1.1rem;">🔗 Visitez le site officiel :</p>
     <a href="https://www.ourydiallo.com/" target="_blank">
       <img src="site-image2.jpg" alt="Site officiel ODS" style="max-width: 300px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     </a>
   </div>
+
   <div class="social-icons">
-    <a href="https://www.linkedin.com/in/aziz-diallo-87165110b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a href="https://www.linkedin.com/in/aziz-diallo-87165110b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     <a href="https://wa.me/221777126218" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
