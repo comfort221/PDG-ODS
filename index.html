@@ -41,7 +41,12 @@
       display: block;
     }
 
-    h1, h4 {
+    h1 {
+  font-weight: bold;
+  color: #005670;
+}
+
+     h4 {
       text-align: center;
       margin: 0.2rem 0;
     }
@@ -116,7 +121,10 @@
         padding: 8px 12px;
       }
       .carousel-inner img {
-        height: 480px;
+  max-height: 480px;
+  width: 100%;
+  object-fit: contain;
+  background-color: white;
       }
     }
   </style>
@@ -129,7 +137,7 @@
   <img src="avatar.jpg" alt="Avatar Aziz Diallo" class="avatar" />
 
   <!-- Nom et Poste -->
-  <h1>AZIZ Diallo</h1>
+  <h1>Aziz DIALLO</h1>
   <h4>Président Directeur Général <br> ODS</h4>
 
   <!-- Description -->
