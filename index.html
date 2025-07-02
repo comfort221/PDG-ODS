@@ -74,23 +74,24 @@
       overflow: hidden;
       background-color: transparent;
       height: 650px;
+      text-align: center; /* Centrer les images */
     }
     .carousel-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      /* Ne pas forcer display:flex */
       background-color: transparent;
       height: 100%;
-      transition: transform 0.5s ease-in-out;
+      text-align: center;
     }
     .carousel-item img {
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
       cursor: pointer;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       user-select: none;
+      margin: auto;
+      display: inline-block;
     }
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
@@ -140,7 +141,7 @@
 
   <!-- CAROUSEL UNIQUE -->
   <div class="carousel-container">
-    <div id="productCarousel" class="carousel slide" data-bs-interval="4000">
+    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="b2.png" alt="Produit 1" onclick="window.open(this.src, '_blank')">
@@ -171,46 +172,4 @@
   <div class="text-center my-4">
     <p style="font-size: 1.1rem;">🔗 Visitez le site officiel :</p>
     <a href="https://www.ourydiallo.com/" target="_blank">
-      <img src="site-image2.jpg" alt="Site officiel ODS" style="max-width: 300px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-    </a>
-  </div>
-
-  <!-- Réseaux sociaux -->
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/aziz-diallo-87165110b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-    <a href="https://wa.me/221777126218" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // Initialisation manuelle du carousel
-    const carouselElement = document.getElementById('productCarousel');
-    const carousel = new bootstrap.Carousel(carouselElement, {
-      interval: 4000,
-      ride: 'carousel',
-      pause: 'hover',
-      touch: true
-    });
-
-    // Gestion du swipe tactile custom (pour plus de fiabilité)
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carouselElement.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    carouselElement.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchEndX - touchStartX;
-      const threshold = 40; // seuil en px pour détecter un swipe
-      if (diff > threshold) {
-        carousel.prev();
-      } else if (diff < -threshold) {
-        carousel.next();
-      }
-    });
-  </script>
-</body>
-</html>
+      <img src="site-image2.jpg" alt="Site officiel ODS" style="max-width: 300px; border-radius: 12px;
