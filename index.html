@@ -46,9 +46,28 @@
       margin: 0.2rem 0;
     }
 
-    .bold-blue {
-      font-weight: bold;
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.85);
       color: #005670;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      animation: fadeInSlide 1.2s ease;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .description {
@@ -134,13 +153,19 @@
   <img src="avatar.jpg" alt="Avatar Aziz Diallo" class="avatar" />
 
   <!-- Nom et Poste -->
-  <h1>Aziz DIALLO</h1>
-  <h4><span class="bold-blue">Président Directeur Général</span><br>ODS</h4>
+  <h1>AZIZ Diallo</h1>
+  <h4>
+    <span class="highlight-box">
+      <i class="fas fa-user-tie"></i> Président Directeur Général
+    </span><br>
+    ODS
+  </h4>
 
   <!-- Description -->
   <p class="description">
-    Président Directeur Général de Oury Diallo Sarl, un des plus grands importateurs de denrées alimentaires au Sénégal et dans la sous-région.
+    Président Directeur Général de ODS, un des plus grands importateurs de denrées alimentaires au Sénégal et dans la sous-région.
     Produits : viande, riz, huile, lait, frites, etc.
+    En parallèle, il a cofondé Hayat Foods, une société innovante avec ses propres marques, et plus récemment, Boxus Holding Group, une structure regroupant ses projets industriels et commerciaux pour une meilleure synergie.
   </p>
 
   <!-- Bouton Ajouter Contact -->
@@ -169,6 +194,7 @@
     </button>
   </div>
 
+  <!-- Lien vers le site officiel -->
   <div class="text-center my-4">
     <p style="font-size: 1.1rem;">🔗 Visitez le site officiel :</p>
     <a href="https://www.ourydiallo.com/" target="_blank">
@@ -176,6 +202,7 @@
     </a>
   </div>
 
+  <!-- Réseaux sociaux -->
   <div class="social-icons">
     <a href="https://www.linkedin.com/in/aziz-diallo-87165110b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     <a href="https://wa.me/221777126218" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
