@@ -120,12 +120,13 @@
         width: 130px;
         padding: 8px 12px;
       }
-      .carousel-inner img {
-  max-height: 480px;
+     .carousel-inner img {
   width: 100%;
+  height: auto;
   object-fit: contain;
-  background-color: white;
-      }
+  background-color: white; /* Pour éviter les vides noirs si l'image n'occupe pas tout */
+}
+
     }
   </style>
 </head>
